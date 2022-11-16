@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Text, View} from 'react-native'
+import Components from './components/Components';
 
 class App extends Component {
   constructor(props) {
@@ -8,8 +9,9 @@ class App extends Component {
   }
   render() {
     return (
-      <View>
-        <Text>Hello World</Text>
+      <View style={{flex:1}}>
+        <Text style={{color:'red'}}>Hello World</Text>
+        <Components />
       </View>
     );
   }
