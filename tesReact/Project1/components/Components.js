@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {View, Text}  from 'react-native'
+import Header from './Header';
 
 class Components extends Component {
     constructor(props) {
@@ -8,7 +9,8 @@ class Components extends Component {
     }
     render() {
         return (
-            <View style={{flex:1}}>
+            <View style={{}}>
+            <Header/>
                 <Text 
                 style={{fontSize: 30, 
                         textAlign: 'center',
@@ -17,8 +19,8 @@ class Components extends Component {
                 }}>Ini Adalah Komponen
                 <Text style={{backgroundColor:'black', color :'white', textDecorationLine:'none'}}>Tes 1</Text>
                 </Text>
-                <View style={{flex : 1, backgroundColor:'red', justifyContent:'center' , alignItems:'center', margin: 30, flexDirection:'column-reverse'}}>
-                    <Text style={{color:'white', fontWeight: 'bold'}}>Hello My Name Is Ridho1</Text>
+                <View style={{ backgroundColor:'red', justifyContent:'center' , alignItems:'center', margin: 30, flexDirection:'column-reverse', width: 300, height: 300}}>
+                    <Text style={{color:'white', fontWeight: 'bold'}}>Hello My Name Is Fahreza</Text>
                     <Text style={{color:'white', fontWeight: 'bold'}}>Hello My Name Is Ridho2</Text>
                     <Text style={{color:'white', fontWeight: 'bold'}}>Hello My Name Is Ridho3</Text>
                     <Text style={{color:'white', fontWeight: 'bold'}}>Hello My Name Is Ridho4</Text>
