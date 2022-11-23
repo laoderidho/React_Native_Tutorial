@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import {View, Text}  from 'react-native'
-import Header from './Header';
+import {View, Text, Image}  from 'react-native'
 
 class Components extends Component {
     constructor(props) {
@@ -9,8 +8,7 @@ class Components extends Component {
     }
     render() {
         return (
-            <View style={{}}>
-            <Header/>
+            <View style={{marginTop: 12}}>
                 <Text 
                 style={{fontSize: 30, 
                         textAlign: 'center',
@@ -25,6 +23,7 @@ class Components extends Component {
                     <Text style={{color:'white', fontWeight: 'bold'}}>Hello My Name Is Ridho3</Text>
                     <Text style={{color:'white', fontWeight: 'bold'}}>Hello My Name Is Ridho4</Text>
                 </View>
+                <Image />
             </View>
         );
     }
@@ -37,6 +36,8 @@ class Components extends Component {
     - untuk sementara ini style yang di beri nilai hanya angka, tidak di beri meteran ukur seperti px, vh dll
     - flex adalah propertie untuk memberikan lebar dalam display , jika ingin memberi display dengan flex maka semua elemen view yang berkaitan harus di beri propertie flex
     - properties flex direction mengatur bagaimana sebuah konten di atur tata letak nya
+    - status bar lebih baik masuk ke dalam root components
+    - design color link = https://www.materialpalette.com/colors
 */
 
 
@@ -45,5 +46,6 @@ syntax xml Components
 Text : Menampilkan Text juga bisa Menulis Text
 style : Untuk Memberi Style / dekorasi
 view : sama system nya seperti div yaitu menyimpan property seperti text, form dll
+StatusBar: memberikan style di bagian paling atas hand phone biasanya seperti baterai, jam dll 
 */
 export default Components;
