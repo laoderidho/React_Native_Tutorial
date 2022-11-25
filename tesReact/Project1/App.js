@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { View, StatusBar } from 'react-native'
+import { ScrollView, StatusBar } from 'react-native'
 import Components from './components/Components';
 import TesComponents from './components/TesComponents';
+import Tes1 from './components/Tes1';
 
 class App extends Component {
   constructor(props) {
@@ -10,11 +11,12 @@ class App extends Component {
   }
   render() {
     return (
-      <View style={{flex: 1}}>
-        <StatusBar barStyle='default' backgroundColor='#64b5f6'/>
+      <ScrollView style={{flex: 1}}>
+        <StatusBar barStyle='dark-content' backgroundColor='#64b5f6'/>
         <TesComponents/>
         <Components />
-      </View>
+        <Tes1/>
+      </ScrollView>
     );
   }
 }
