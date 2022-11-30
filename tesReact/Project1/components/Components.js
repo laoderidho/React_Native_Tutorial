@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {View, Text, Image, Switch, StyleSheet, ScrollView}  from 'react-native'
 import TesButton from './TesButton';
+import PerMission from './PerMission';
 
 class Components extends Component {
     constructor(props) {
@@ -31,6 +32,7 @@ class Components extends Component {
                 <View style={styles.switch}>
                  <Switch style={{}} value={this.state.value} onValueChange={()=> this.setState({value: ! this.state.value})} />
                  <TesButton/>
+                <PerMission/>
                 </View>
             </ScrollView>
         );
