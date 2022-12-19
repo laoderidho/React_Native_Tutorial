@@ -109,5 +109,6 @@ Stylesheet: untuk memberi style secara terpisah dengan memanggil class nya
 Button : Untuk menampilkan Tommbol
 Flatlist : Untuk memberikan list data
 Alert: Untuk menampilkan alert
+ActivityIndicator: untuk menampilkan loading
 */
 export default Components;

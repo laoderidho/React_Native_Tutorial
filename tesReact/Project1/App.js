@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {View, StatusBar, StyleSheet, Alert, BackHandler } from 'react-native'
+import {View, StatusBar, StyleSheet, Alert, BackHandler, ActivityIndicator } from 'react-native'
 import Components from './components/Components';
 import TesComponents from './components/TesComponents';
 import Tes1 from './components/Tes1';
@@ -38,6 +38,7 @@ componentWillUnmount() {
       <View style={styles.scrool}>
         <StatusBar barStyle='dark-content' backgroundColor='#64b5f6'/>
         <TesComponents/>
+        <ActivityIndicator size='small' color= 'red' animating={true} />
         <TesForm/>
         <Components />
         <Tes1/>
