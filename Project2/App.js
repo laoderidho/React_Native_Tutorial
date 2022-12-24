@@ -1,19 +1,35 @@
 import * as React from 'react';
-import { NavigationContainer, StackActions } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './src/Screens/Home';
 import Detail from './src/Screens/Detail';
 import About from './src/Screens/About';
+import SplashScreen from './src/Screens/SplashScreen';
+import { TextBase, View } from 'react-native';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator(); //stack untuk membuat Navigasi
+
+const Tab = createBottomTabNavigator(); //untuk membuat Tombol tab navigasi
+
+//route debagai tempat navigasi
+const Route = ()=>{
+    return(
+      <Tab.Navigator screenOptions={{headerShown: false}}>
+        <Tab.Screen name="Home" component={Home}/>
+        <Tab.Screen name="Detail" component={Detail}/>
+        <Tab.Screen name="About" component={About}/>
+      </Tab.Navigator>
+    )
+}
+
 
 const App = ()=>{
   return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='Home' screenOptions={{headerShown: false}}>
-          <Stack.Screen name='Home' component={Home} />
-          <Stack.Screen name='Detail' component={Detail} />
-          <Stack.Screen name='About' component={About} />
+        <Stack.Navigator initialRouteName='SplashScreen' screenOptions={{headerShown: false}}>
+          <Stack.Screen name='SplashScreen' component={SplashScreen} />
+          <Stack.Screen name='Route' component={Route} />
         </Stack.Navigator>
       </NavigationContainer>
   )
