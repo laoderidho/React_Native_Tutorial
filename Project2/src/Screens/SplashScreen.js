@@ -1,8 +1,6 @@
 import React,{Component} from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 import { StackActions } from '@react-navigation/native';
-
-
 
 class SplashScreen extends Component {
     constructor(props) {
@@ -12,7 +10,7 @@ class SplashScreen extends Component {
 
     componentDidMount () {
         setTimeout(()=>{
-          this.props.navigation.navigate('Route') //splashscreen yang akan muncuk pertama dan menjadi load aplikasi
+            this.props.navigation.dispatch(StackActions.replace('Route'))
         }, 2000)
     }
     

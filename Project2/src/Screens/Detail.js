@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import {  Text, View, BackHandler } from 'react-native'
+import React, {useEffect} from 'react'
 
-const Detail = () => {
+const Detail = ({navigation}) => {
   return (
     <View>
       <Text>Detail</Text>
@@ -10,5 +10,3 @@ const Detail = () => {
 }
 
 export default Detail
-
-const styles = StyleSheet.create({})

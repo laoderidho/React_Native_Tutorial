@@ -1,22 +1,26 @@
-import React, { Component } from 'react'
-import {View, Text, Alert , Button} from 'react-native'
+import { Text, View, BackHandler } from 'react-native'
+import React, {useEffect} from 'react'
 
-class TesFunction extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  };
-    }
-    tesFunc= ()=>{
-        Alert.alert('Warning', 'ini adalah Alert', [{text:'cancel'}, {text: 'OK'}])
-    }
-    render() {
-        return (
-            <View>
-                <Text>Coba Tekan Tombol di bawah ini</Text>
-                <Button title='tekan ini' onPress={()=>this.tesFunc()}/>
-            </View>
-        );
-    }
+
+const TesFunction = ({navigation}) => {
+    // kode useEffect di bawah
+    useEffect(() => {
+    const backAction = () => {
+      navigation.goBack();
+      return true;
+    };
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      backAction
+    );
+    return () => backHandler.remove();
+  }, []);
+  return (
+    <View>
+      <Text>TesFunction</Text>
+    </View>
+  )
 }
 
-export default TesFunction;
+export default TesFunction
+
