@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native'
+import { StatusBar, Text, View } from 'react-native'
 import React from 'react';
 
 const Home = ({navigation}) => {
@@ -6,6 +6,7 @@ const Home = ({navigation}) => {
     <View>
       <Text>Home</Text>
       <Text onPress={()=>navigation.navigate('TesFunction')}>Klik ini</Text>
+      <StatusBar backgroundColor="#01579b" barStyle="dark-content"/>
     </View>
   )
 }

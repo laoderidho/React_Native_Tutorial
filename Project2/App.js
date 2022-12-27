@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Alert, BackHandler } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -8,7 +7,6 @@ import Detail from './src/Screens/Detail';
 import About from './src/Screens/About';
 import SplashScreen from './src/Screens/SplashScreen';
 import TesFunction from './components/TesFunction';
-
 
 const Stack = createNativeStackNavigator(); //stack untuk membuat Navigasi
 
