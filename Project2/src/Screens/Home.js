@@ -1,5 +1,5 @@
-import { StatusBar, Text, View , StyleSheet, TextInput, FlatList } from 'react-native'
-import React from 'react';
+import { StatusBar, Text, View , StyleSheet, TextInput, FlatList, TouchableOpacity } from 'react-native'
+import React,{useState} from 'react';
 
 const Data = [
   {
@@ -9,48 +9,88 @@ const Data = [
   },
   {
     id : 2,
-    name : 'La Ode Ridho Fahreza',
+    name : 'john doe',
     Jurusan : 'Teknik In'
   },
   {
     id : 3,
-    name : 'La Ode Ridho Fahreza',
+    name : 'fahreza steel',
     Jurusan : 'Teknik In'
   },
   {
     id : 4,
-    name : 'La Ode Ridho Fahreza',
+    name : 'misaku',
     Jurusan : 'Teknik In'
   },
   {
     id : 5,
-    name : 'La Ode Ridho Fahreza',
+    name : 'La Ode  Fahreza',
+    Jurusan : 'Teknik In'
+  },
+  {
+    id : 6,
+    name : 'La Ode',
+    Jurusan : 'Teknik In'
+  },
+  {
+    id : 7,
+    name : 'La Ode  alfiansyah',
+    Jurusan : 'Teknik In'
+  },
+  {
+    id : 8,
+    name : 'La Ode giska jeremia',
+    Jurusan : 'Teknik In'
+  },
+  {
+    id : 9,
+    name : 'firman makatita',
+    Jurusan : 'Teknik In'
+  },
+  {
+    id : 10,
+    name : 'La Ode  Fahreza',
+    Jurusan : 'Teknik In'
+  },
+  {
+    id : 11,
+    name : 'irajan tahlin liolatun',
     Jurusan : 'Teknik In'
   }
-
 ]
-const Home = () => {
+const Home = ({navigation}) => {
 
+  const [search, setSearch] = useState('')
   return (
     <View>
       <StatusBar backgroundColor="#4fc3f7" barStyle="dark-content"/>
       
       <View style={styles.Home}>
-         
           <Text style = {styles.textHome}>Home</Text>
       </View>
       <View style = {styles.InputView}>
-        <TextInput style ={styles.Input} />
+        <TextInput placeholder='masukkan apa yang anda cari' 
+        style ={styles.Input} 
+        value={search} 
+        onChangeText = {text=> setSearch(text)}
+        />
       </View>
 
       <View style={styles.parentFlatListView}>
       <FlatList 
         data={Data}
         renderItem={({item, index})=>(
-          <View style = {styles.FlatListView}>
+          <TouchableOpacity onPress={()=> navigation.navigate('Detail', {
+            id: item.id,
+            name: item.name,
+            Jurusan : item.Jurusan
+          })}>
+            <View style = {styles.FlatListView}>
             <Text style = {styles.FlatListText}>{item.name}</Text>
             <Text style = {styles.FlatListText}>{item.Jurusan}</Text>
           </View>
+          </TouchableOpacity>
+        
         )}
         keyExtractor={item => item.id}
       />
@@ -79,6 +119,7 @@ const styles = StyleSheet.create({
     marginHorizontal : 50,
     borderRadius : 13,
     elevation : 14,
+    height : 50,
     width : 300
   },
   FlatListView:{

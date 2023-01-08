@@ -18,7 +18,6 @@ const Route = ()=>{
       // back behavior agar jika kita tekan back maka akan selalu ke home
       <Tab.Navigator screenOptions={{headerShown: false}} backBehaviour = "initialRoute">
         <Tab.Screen name="Home" component={Home}/>
-        <Tab.Screen name="Detail" component={Detail}/>
         <Tab.Screen name="About" component={About}/>
       </Tab.Navigator>
     )
@@ -31,6 +30,7 @@ const App = ()=>{
         <Stack.Navigator initialRouteName='SplashScreen' screenOptions={{headerShown: false}}>
           <Stack.Screen name='SplashScreen' component={SplashScreen} />
           <Stack.Screen name='TesFunction' component={TesFunction} />
+          <Stack.Screen name='Detail' component={Detail}/>
           <Stack.Screen name='Route' component={Route} />
         </Stack.Navigator>
       </NavigationContainer>
