@@ -1,6 +1,9 @@
 import { StatusBar, Text, View , StyleSheet, TextInput, FlatList, TouchableOpacity } from 'react-native'
 import React,{useState} from 'react';
 
+
+
+
 const Data = [
   {
     id : 1,
@@ -58,9 +61,29 @@ const Data = [
     Jurusan : 'Teknik In'
   }
 ]
-const Home = ({navigation}) => {
 
-  const [search, setSearch] = useState('')
+
+const Home = ({navigation}) => {
+ 
+  
+  // set di belakang menyimpan nilai dan nama state untuk menampilkan nilai
+  const [search, setSearch] = useState(''); //setSearh menampilkan nilai yang akan di masukkan di search
+  const [result, setResult] = useState(Data); //result dakan menampilkan nilai di useState data dalam bentuk setResult
+
+
+  pencarian = text=>{
+      setSearch(text) //setSeacrh akan mengambil text dalam parameter untuk nilai sementara yang di masukkan
+      //jika tidak ada Nilai yang di masukkan maka ambil data setResult
+      if(!text){
+        setResult(Data)
+      }
+      //jika sebuah search ada datanya maka ambil data yang di masukkan ke dalam input
+      else{
+        const cari = Data.filter(item=> item.name.toLowerCase().includes(text.toLowerCase()))
+        setResult(cari)
+      }
+  }
+
   return (
     <View>
       <StatusBar backgroundColor="#4fc3f7" barStyle="dark-content"/>
@@ -68,18 +91,20 @@ const Home = ({navigation}) => {
       <View style={styles.Home}>
           <Text style = {styles.textHome}>Home</Text>
       </View>
+
       <View style = {styles.InputView}>
-        <TextInput placeholder='masukkan apa yang anda cari' 
+        <TextInput placeholder='masukkan Nama yang anda cari' 
         style ={styles.Input} 
         value={search} 
-        onChangeText = {text=> setSearch(text)}
+        onChangeText = {pencarian}
         />
       </View>
 
       <View style={styles.parentFlatListView}>
       <FlatList 
-        data={Data}
-        renderItem={({item, index})=>(
+        data={result}
+        renderItem={({item})=>(
+          //onpress di bawah ini untuk mengirim data ke dalam Detail 
           <TouchableOpacity onPress={()=> navigation.navigate('Detail', {
             id: item.id,
             name: item.name,
@@ -90,7 +115,6 @@ const Home = ({navigation}) => {
             <Text style = {styles.FlatListText}>{item.Jurusan}</Text>
           </View>
           </TouchableOpacity>
-        
         )}
         keyExtractor={item => item.id}
       />

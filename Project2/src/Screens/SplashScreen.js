@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import { Text, View } from 'react-native'
+import {  View , Text, Image, StyleSheet } from 'react-native'
 import { StackActions } from '@react-navigation/native';
 
 class SplashScreen extends Component {
@@ -11,16 +11,30 @@ class SplashScreen extends Component {
     componentDidMount () {
         setTimeout(()=>{
             this.props.navigation.dispatch(StackActions.replace('Route'))
-        }, 2000)
+        }, 1500)
     }
     
     render() {
         return (
-            <View>
-                <Text>This SplashScreen</Text>
+            <View style={styles.parent}>
+                <View style={styles.container}>
+                   <Image
+                    source={require('../../asset/desain_interior.gif')}
+                   />
+                </View>
             </View>
         );
     }
 }
 
+const styles = StyleSheet.create({
+    container:{
+        alignItems:'center',
+        justifyContent: 'center',
+        height: 900
+    },
+    parent: {
+        backgroundColor : '#ffff'
+    }
+})
 export default SplashScreen;

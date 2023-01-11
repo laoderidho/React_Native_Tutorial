@@ -1,9 +1,8 @@
 import {  Text, View, StyleSheet } from 'react-native'
 import React, {} from 'react'
-import Icon from 'react-native-vector-icons/FontAwesome5'
 
 
-const Detail = ({route, navigation}) => {
+const Detail = ({route}) => {
 
   const {id} = route.params
   const {name} = route.params

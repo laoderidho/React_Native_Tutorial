@@ -53,7 +53,5 @@ const styles = StyleSheet.create({
     flex: 1
   }
 })
-/* 
-  - Untuk syntax xml lihat di file Components/components.js
-*/
+
 export default App;
