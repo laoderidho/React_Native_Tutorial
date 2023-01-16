@@ -32,3 +32,4 @@ Hal Yang Perlu di perhatikan
     - toasandroid berfungsi untuk membuat membuat notifikasi di bawah 
     - dalam toast android memiliki toastandroid(tostandroid.show(apa yang ingin di show, toasandroid.SHORT))
     - untuk mengganti nama pergi ke file android/app/src/main/res/values/string.xml lalu ketik gradlew clean command
+    - jika ingin menggunakan library toast maka di tarus ke dalam tempat terakhir view

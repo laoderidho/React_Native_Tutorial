@@ -1,11 +1,11 @@
 import React,{Component} from 'react'
-import {  View , Text, Image, StyleSheet } from 'react-native'
+import {  View , Image, StyleSheet } from 'react-native'
 import { StackActions } from '@react-navigation/native';
 
 class SplashScreen extends Component {
     constructor(props) {
         super(props);
-        this.state = {  };
+        this.state = {};
     }
 
     componentDidMount () {
