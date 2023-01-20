@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View, StatusBar, Button, TouchableOpacity, TextInput } from 'react-native'
+import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Button,  } from 'react-native'
 import React, {useState} from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 import { Toast } from 'react-native-toast-message/lib/src/Toast'
+import Modal from 'react-native-modal'
+import Icon from 'react-native-vector-icons/FontAwesome5'
 
-
-const Home = ({navigation}) => {
+const Home = () => {
 
     const showToast = ()=>{
        Toast.show({
@@ -19,6 +20,12 @@ const Home = ({navigation}) => {
        })
     }
 
+    const [modalVisible, setModalVisible] = useState(false)
+
+    const toogleModal= () =>{
+       setModalVisible(!modalVisible)
+    }
+
   return (
     <View>
         <StatusBar translucent backgroundColor='transparent' />
@@ -28,11 +35,25 @@ const Home = ({navigation}) => {
         >
           <Text style={{color: '#ffff'}}>Hello</Text>
         </LinearGradient>
+
         {/* di bawah ini akan menjalankan toast jika di ketik */}
        <TouchableOpacity onPress={showToast}>
-          <Text>Klik saya</Text>
+          <Text style={styles.touch}>Klik saya</Text>
        </TouchableOpacity>
 
+      <View style={styles.openModal}>
+        <Button title='Show Modal' onPress={toogleModal} />
+      </View>
+          <Modal style={styles.ModalStyle} isVisible={modalVisible} animationIn={'fadeIn'} animationOut={'fadeOut'}>
+            <View style={styles.ViewModal} >
+            <TouchableOpacity onPress={toogleModal}>
+              <Icon name='times' color ='black' size={30}/>
+            </TouchableOpacity>
+            </View>
+            <View>
+              <Text style={{paddingBottom: 13}}>This My Modal</Text>
+            </View>
+          </Modal>
         <Toast />
     </View>
   )
@@ -47,5 +68,35 @@ const styles = StyleSheet.create({
        alignItems: 'center',
        padding: 14,
        elevation: 100
+    },
+    ModalStyle:{
+        alignItems: 'center',
+        height: 100,
+        elevation: 5,
+        backgroundColor: 'white',
+        justifyContent: 'center',        
+        marginHorizontal: 50,
+        marginVertical: 200,
+        position: 'relative',
+        borderRadius: 20
+    },
+    touch:{
+      backgroundColor: '#03a9f4',
+      marginHorizontal: 140,
+      marginVertical: 13,
+      color: 'white',
+      textAlign: 'center',
+      fontSize: 20,
+      padding: 13,
+      borderRadius: 100
+    },
+    openModal:{
+      marginHorizontal: 100,
+      borderRadius: 50
+    },
+    ViewModal:{
+      position: 'absolute',
+      top: 3,
+      right: 3
     }
 })
