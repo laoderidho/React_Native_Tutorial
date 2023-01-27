@@ -5,7 +5,7 @@ import { Toast } from 'react-native-toast-message/lib/src/Toast'
 import Modal from 'react-native-modal'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
-const Home = () => {
+const Home = ({navigation}) => {
 
     const showToast = ()=>{
        Toast.show({
@@ -28,6 +28,7 @@ const Home = () => {
 
   return (
     <View>
+
         <StatusBar translucent backgroundColor='transparent' />
         <LinearGradient style={styles.view1}
             colors={['#12c2e9', '#c471ed', '#f64f59']}
@@ -54,7 +55,9 @@ const Home = () => {
               <Text style={{paddingBottom: 13}}>This My Modal</Text>
             </View>
           </Modal>
-        <Toast />
+
+         <Text onPress={()=>navigation.navigate('GridView')}>Klik Grid View</Text>
+        <Text onPress={()=> navigation.navigate('Date')}>klik Date Picker</Text> <Toast />
     </View>
   )
 }

@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './Screen/Home';
 import SplashScreen from './Screen/SplashScreen';
 import About from './Screen/About';
+import GridView from './components/GridView';
 
 
 
@@ -28,6 +29,8 @@ function App() {
       <Stack.Navigator initialRouteName='SplashScreen' screenOptions={{headerShown: false}} >
         <Stack.Screen name='Route' component={Route}/>
         <Stack.Screen name='SplashScreen' component={SplashScreen}/>
+        <Stack.Screen name='GridView' component={GridView}/>
+  
       </Stack.Navigator>
     </NavigationContainer>
   );
